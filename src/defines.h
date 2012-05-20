@@ -30,6 +30,7 @@ typedef uint16_t			uint16;
 typedef uint8_t				uint8;
 #endif
 
+#define __STORMLIB_SELF__
 #include "StormLib.h"
 
 #include <cstdio>

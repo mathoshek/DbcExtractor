@@ -49,7 +49,7 @@ void System::HandleArguments( int argc, char* argv[] )
 	
 	if( WorkDir.empty() == true )
 		WorkDir = "./";
-	else if( WorkDir[WorkDir.size( )] != '/')
+	else if( WorkDir[WorkDir.size( ) - 1] != '/')
 		WorkDir += "/";
 	
 	for(int32 i = 0; i <= NUMBER_OF_LOCALES; i++)
@@ -112,7 +112,10 @@ void System::ExtractDBCs()
 		}
 	}
 
-	//SFileExtractFile(hMpq, sf.cFileName, fname.c_str(), SFILE_OPEN_PATCHED_FILE); \\component extraction
+	string component = "component.wow-";
+	component += langs[lang];
+	component += ".txt";
+	SFileExtractFile(hMpq, component.c_str( ), (DbcFolder + component).c_str( ), SFILE_OPEN_PATCHED_FILE);
 	
 	int cnt = 0;
 	SFILE_FIND_DATA sf;
