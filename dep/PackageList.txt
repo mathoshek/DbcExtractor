@@ -1,0 +1,6 @@
+DbcExtractor uses the following opensource software:
+
+StormLib (APIs for handling MPQ archives)
+  http://www.zezula.net/en/mpq/stormlib.html
+  Version: 8.10
+
